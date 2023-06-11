@@ -1,15 +1,15 @@
 import useStarWars from '../../hooks/useStarWars';
 
 const StarWars = () => {
-  const { data, loading } = useStarWars();
-  console.log('after useStarWars() call: ', data);
+  const { data, isLoading, error } = useStarWars();
   return (
     <>
       <h1>Star Wars Poeple</h1>
-      {loading && <p>No peeples yet...</p>}
-      {data && !loading && (
+      {error && <p>Ah Crap!!! {error}</p>}
+      {isLoading && <p>No peeples yet...</p>}
+      {data && !isLoading && (
         <ul>
-          {data.results.map((p) => (
+          {data.map((p) => (
             <li key={p.name}>{p.name}</li>
           ))}
         </ul>

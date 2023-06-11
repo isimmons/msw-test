@@ -17,8 +17,8 @@ const preview: Preview = {
       },
     },
   },
-  // loaders: [mswLoader],
-  decorators: [mswDecorator],
+  loaders: [mswLoader],
+  // decorators: [mswDecorator],
 };
 
 export default preview;
